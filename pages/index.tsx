@@ -32,11 +32,11 @@ const Home: NextPage = () => {
 
             <main className={styles.main}>
                 <Box sx={{padding: '0px 30px'}}>
-                    <Grid container spacing={8}>
+                    <Grid container spacing={10}>
                         {
                             isSuccess &&
                             countries.map((country, index) => (
-                                <Grid key={index} item xs={3}>
+                                <Grid key={index} item xs={12} sm={6} md={4} lg={3}>
                                     <CountryCard country={country}/>
                                 </Grid>
                             ))
