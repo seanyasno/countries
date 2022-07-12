@@ -49,48 +49,52 @@ const Home: NextPage = () => {
                 {
                     isSuccess &&
                     <Box sx={{padding: '0px 30px'}}>
-                        <Box sx={{display: 'flex'}}>
-                            <InputBase
-                                placeholder="Search for a country..."
-                                onChange={event => setInput(event.target.value)}
-                                sx={theme => ({
-                                    margin: '0 0 50px 0',
-                                    flexGrow: 1,
-                                    '& .MuiInputBase-input': {
-                                        borderRadius: 2,
-                                        position: 'relative',
-                                        backgroundColor: theme.palette.mode === 'light' ? 'hsl(0, 0%, 100%)' : '#2b2b2b',
-                                        border: '0px none #ced4da',
-                                        fontSize: 14,
-                                        width: '400px',
-                                        padding: '16px 24px',
-                                        transition: theme.transitions.create([
-                                            'border-color',
-                                            'background-color',
-                                            'box-shadow',
-                                        ]),
-                                        boxShadow: theme.shadows[3]
-                                    },
-                                })}
-                            />
-                            <FormControl sx={{width: '200px'}}>
-                                <InputLabel id="region-select-label">Region</InputLabel>
-                                <Select
-                                    labelId="region-select-label"
-                                    id="region-select"
-                                    value={selectedRegion}
-                                    label="Region"
-                                    onChange={event => setSelectedRegion(event.target.value)}
-                                >
-                                    <MenuItem value=''>None</MenuItem>
-                                    <MenuItem value="Africa">Africa</MenuItem>
-                                    <MenuItem value="America">America</MenuItem>
-                                    <MenuItem value="Asia">Asia</MenuItem>
-                                    <MenuItem value="Europe">Europe</MenuItem>
-                                    <MenuItem value="Oceania">Oceania</MenuItem>
-                                </Select>
-                            </FormControl>
-                        </Box>
+                        <Grid container>
+                            <Grid item xs={12} md={6}>
+                                <InputBase
+                                    placeholder="Search for a country..."
+                                    onChange={event => setInput(event.target.value)}
+                                    sx={theme => ({
+                                        margin: '0 0 50px 0',
+                                        flexGrow: 1,
+                                        '& .MuiInputBase-input': {
+                                            borderRadius: 2,
+                                            position: 'relative',
+                                            backgroundColor: theme.palette.mode === 'light' ? 'hsl(0, 0%, 100%)' : '#2b2b2b',
+                                            border: '0px none #ced4da',
+                                            fontSize: 14,
+                                            width: '400px',
+                                            padding: '16px 24px',
+                                            transition: theme.transitions.create([
+                                                'border-color',
+                                                'background-color',
+                                                'box-shadow',
+                                            ]),
+                                            boxShadow: theme.shadows[3]
+                                        },
+                                    })}
+                                />
+                            </Grid>
+                            <Grid item xs={12} md={6} sx={{display: 'flex', justifyContent: 'end'}}>
+                                <FormControl sx={{width: '200px'}}>
+                                    <InputLabel id="region-select-label">Region</InputLabel>
+                                    <Select
+                                        labelId="region-select-label"
+                                        id="region-select"
+                                        value={selectedRegion}
+                                        label="Region"
+                                        onChange={event => setSelectedRegion(event.target.value)}
+                                    >
+                                        <MenuItem value=''>None</MenuItem>
+                                        <MenuItem value="Africa">Africa</MenuItem>
+                                        <MenuItem value="America">America</MenuItem>
+                                        <MenuItem value="Asia">Asia</MenuItem>
+                                        <MenuItem value="Europe">Europe</MenuItem>
+                                        <MenuItem value="Oceania">Oceania</MenuItem>
+                                    </Select>
+                                </FormControl>
+                            </Grid>
+                        </Grid>
                         <Grid container spacing={10}>
                             {
                                 filteredCountries?.map((country, index) => (
