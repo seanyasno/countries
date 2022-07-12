@@ -10,7 +10,7 @@ export const CountryCard: React.FC<Props> = (props) => {
     const {country} = props;
 
     return (
-        <Card elevation={3}>
+        <Card elevation={3} sx={{height: '100%'}}>
             <CardActionArea>
                 <CardMedia
                     component="img"
